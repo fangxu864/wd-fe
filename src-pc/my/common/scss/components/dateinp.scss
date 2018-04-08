@@ -1,0 +1,54 @@
+// 日期输入框
+
+/* 
+//html结构
+<div class="pui-dateinp">
+    <input class="pui-dateinp__inp" placeholder="请选择日期" type="text">
+</div> 
+*/
+
+.#{$prefix}-dateinp {
+    position: relative;
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    &__inp {
+        // width: 100%;
+        box-sizing: border-box;
+        height: 36px;
+        width: 100%;
+        line-height: 20px;
+        padding: 5px 5px;
+        font-family: arial;
+        font-size: 14px; 
+        border: 1px solid $clr-bdr-base;
+        background: none;
+        padding-right: 30px;
+        border-radius: 3px;
+        position: relative;
+        z-index: 1;
+        // transition: box-shadow .2s ease-in-out, border-color .2s ease-in-out;
+        &:focus {
+            color: orangered;
+            border-color: $clr-main;
+            outline: 0;
+            // box-shadow: $inp-focus-shadow;
+            
+        }
+    }
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: url($date-img) no-repeat;
+        background-size: 20px 20px;
+        right: 5px;
+        top: 8px;
+    }
+}
+
+.#{$prefix}-dateinp--200 {
+    width: 200px;
+}

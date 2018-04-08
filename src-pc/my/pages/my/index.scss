@@ -1,0 +1,271 @@
+@mixin dargCss() {
+    // 拖动相关样式
+    .sortable-ghost {
+        position: relative;
+    }
+    .handle {
+        cursor: move;
+    }
+    .sortable-ghost:after {
+        position: absolute;
+        content: "";
+        box-sizing: border-box;
+        display: block;
+        border: 2px dashed #ccc;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+    .sortable-drag {
+        opacity: 0.8;
+    }
+}
+
+.g-body {
+    margin-top: 20px;
+}
+
+//顶部导航
+.m-topnav {
+    .topnav-item {
+        margin: 0px 10px 10px 0;
+        .el-btn:hover {
+            background-color: #fff;
+        }
+    }
+    @include dargCss();
+    .btn-move,.btn-edit{
+        
+        .icon{
+            color: #409eff;
+            padding-right: 0 !important;
+        }
+    }
+    .content-btn:hover{
+        color: #409eff;
+    }
+    
+}
+
+.btn-group {
+    display: inline-block;
+    vertical-align: middle;
+    transition: all 0.3s;
+    &::before {
+        display: table;
+        content: "";
+    }
+    .btn {
+        float: left;
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 4px;
+        display: inline-block;
+        line-height: 1;
+        white-space: nowrap;
+        cursor: pointer;
+        background: #fff;
+        border: 1px solid #dcdfe6;
+        color: #606266;
+        -webkit-appearance: none;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: 0;
+        margin: 0;
+        border-radius: 4px;
+        // &:hover {
+        //     background-color: #409eff;
+        //     color: #fff;
+        // }
+        &:not(:last-child) {
+            margin-right: -1px;
+        }
+        &:first-child:last-child {
+            border-radius: 4px;
+        }
+        &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        &:last-child {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        &:not(:first-child):not(:last-child) {
+            border-radius: 0;
+        }
+        &.handle {
+            cursor: move;
+        }
+        .icon{
+            padding-right: 5px;
+        }
+    }
+    .icon {
+        font-size: 14px;
+    }
+}
+
+// 导航
+.m-title {
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 20px; // font-weight: bold;
+}
+
+//左边
+.m-sidenav {
+    float: left;
+    width: 200px;
+    box-sizing: border-box;
+    .sidenav-box {
+        margin-bottom: 10px;
+    }
+    .sidenav-item {
+        position: relative;
+        padding: 10px 20px;
+        font-size: 14px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        cursor: pointer;
+        .sidenav-item__con {
+            line-height: 16px;
+        }
+        &:not(:last-child) {
+            border-bottom: none;
+        }
+        &:hover {
+            background-color: #409eff;
+            color: #fff;
+        }
+        &__move {
+            display: none;
+        }
+        &__edit {
+            display: none;
+        } // 可编辑状态的时候
+        &.is-edit {
+            &:hover {
+                background-color: #fff;
+                color: inherit;
+            }
+            padding-left: 50px;
+            padding-right: 40px;
+            .sidenav-item__move {
+                display: block;
+                position: absolute;
+                width: 40px;
+                text-align: center;
+                top: 0;
+                left: 0;
+                height: 100%;
+                line-height: 35px;
+                border-right: 1px solid #e5e5e5;
+                color: #409eff;
+                .icon {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    line-height: 14px;
+                }
+            }
+            .sidenav-item__edit {
+                display: block;
+                position: absolute;
+                width: 40px;
+                text-align: center;
+                top: 0;
+                right: 0;
+                height: 100%;
+                line-height: 35px;
+                border-left: 1px solid #e5e5e5;
+                color: #409eff;
+                .icon {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    line-height: 14px;
+                }
+            }
+        }
+    }
+    @include dargCss();
+}
+
+//右边
+.m-rightCon {
+    float: left;
+    width: 960px;
+    margin-left: 20px;
+    box-sizing: border-box; // border: 1px solid #e5e5e5;
+    .card {
+        position: relative;
+        box-sizing: border-box;
+        height: 100px;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        background-color: #fff;
+        margin-bottom: 10px;
+        padding: 20px;
+        color: #606266;
+        &__tit {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        &__con {
+            font-size: 14px;
+        }
+        .card__edit,.card__move{
+            width: 20px;
+            height: 20px;
+            background-color: #e5e5e5;
+            border-radius: 3px;
+            display: none;
+            position: absolute;
+            top: 0;
+            text-align: center;
+            line-height: 20px;
+        }
+        .card__move{
+            left: 0;
+        }
+        .card__edit{
+            cursor: pointer;
+            right: 0;
+        }
+        &:hover{
+            .card__edit,.card__move{
+               display: block;
+            }
+        }
+    }
+    .sortable-ghost .card:after {
+        position: absolute;
+        content: "";
+        box-sizing: border-box;
+        display: block;
+        border: 2px dashed #ccc;
+        height: 100%;
+        width: 100%;
+        padding-left: 0;
+        left: 0;
+        top: 0;
+    }
+    .handle {
+        cursor: move;
+    }
+    
+}
+
+.operate-btn:hover{
+    color: #409eff;
+}

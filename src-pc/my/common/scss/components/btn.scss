@@ -1,0 +1,41 @@
+//按钮
+
+@mixin btnBase{
+    display: inline-block;
+    padding: 7px 37px;
+    cursor: pointer;
+    line-height: 20px;
+    font-size: 14px;
+    border-radius: 3px;
+    &:hover{
+        opacity: 0.8;
+    }
+}
+
+.#{$prefix}-btn--main{
+    @include btnBase();
+    color: #fff;
+    background-color: $clr-main;
+    border: 1px solid #e5e5e5;
+}
+
+.#{$prefix}-btn--danger{
+    @include btnBase();
+    margin-left: 10px;
+    color: #fff;
+    background-color: $clr-danger;
+    border: 1px solid #e5e5e5;
+}
+.#{$prefix}-btn--success{
+    @include btnBase();
+    color: #fff;
+    background-color: $clr-success;
+    border: 1px solid #e5e5e5;
+}
+.#{$prefix}-btn--border{
+    @include btnBase();
+    margin-left: 10px;
+    border: 1px solid $clr-main;
+    padding: 6px 20px;
+    color: $clr-main;
+}

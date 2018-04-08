@@ -1,0 +1,35 @@
+//prefix
+$prefix: pui; //默认组件前缀
+
+// color
+$clr-main: #409eff;
+$clr-success: #67C23A; 
+$clr-warning: #E6A23C; 
+$clr-danger: #F56C6C; 
+$clr-info: #909399; 
+
+// border color
+$clr-bdr-base: #DCDFE6;
+$clr-bdr-light: #E4E7ED;
+$clr-bdr-lighter: #EBEEF5;
+// $clr-bdr-lightest: #F2F6FC;
+$clr-bdr-lightest: #f7f7f7;
+
+// font color
+$clr-font-primary: #303133;
+$clr-font-regular: #606266;
+$clr-font-secondary: #909399;
+$clr-font-placeholder: #C0C4CC;
+
+//inp-focus-shadow
+$inp-focus-shadow: 0 0 0 2px rgba(16,142,233,.2);
+
+// border-e5
+$border-main: 1px solid $clr-bdr-base;
+
+
+
+//背景图片
+$date-img: "http://static.12301.cc/images/time_ico.png";
+
+$body-width: 1180px;

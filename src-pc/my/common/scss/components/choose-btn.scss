@@ -1,0 +1,29 @@
+//右下角带对勾的选择按钮
+
+.#{$prefix}-choose-btn {
+    position: relative;
+    display: inline-block;
+    border: $border-main;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    color: $clr-font-primary;
+    padding: 0px 20px;
+    cursor: pointer;
+    &.#{$prefix}-choose-btn--active {
+        color: $clr-danger;
+        border-color: $clr-danger;
+    }
+    &.#{$prefix}-choose-btn--active:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: 0;
+        bottom: 0;
+        background-size: 20px 20px;
+        background-position: bottom right;
+        background-image: url('http://static.12301.cc/assets/build/images/duigou.png?1212');
+    }
+}

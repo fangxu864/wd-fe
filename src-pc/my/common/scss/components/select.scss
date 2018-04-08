@@ -1,0 +1,13 @@
+//普通select样式重置
+
+.#{$prefix}-select{
+    border: 1px solid $clr-bdr-base;
+    display: block;
+    // box-sizing: border-box;
+    line-height: 36px;
+    height: 36px;
+    border-radius: 3px;
+    &:focus {
+        outline: none;
+    }
+}

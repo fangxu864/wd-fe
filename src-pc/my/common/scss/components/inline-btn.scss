@@ -1,0 +1,12 @@
+// 行列按钮
+
+.#{$prefix}-inline-btn{
+    color: $clr-main !important;
+    cursor: pointer;
+    &:hover{
+        text-decoration: underline;
+    }
+    &.pft-inline-btn--mleft10{
+        margin-left: 10px;
+    }
+}
